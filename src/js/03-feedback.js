@@ -1,4 +1,3 @@
-
 import throttle from 'lodash.throttle';
 
 const NAME_OF_KEY='feedback-form-state';
@@ -39,10 +38,16 @@ function onInputMessage(evt) {
 
 function onSubmit(evt) {
   evt.preventDefault();
+  
+ if (evt.currentTarget.email.value && evt.currentTarget.message.value) {
+
   evt.currentTarget.reset();
   console.log(result);
   localStorage.removeItem(NAME_OF_KEY);
 
   result.email = '';
   result.message = '';
+
+   }
+
 }
